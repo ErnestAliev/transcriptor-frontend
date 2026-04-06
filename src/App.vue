@@ -153,8 +153,8 @@ onMounted(async () => {
       />
 
       <section class="main-column">
-        <UploadComposer :disabled="uploading" @upload="handleUpload" />
         <TranscriptPanel :item="activeItem" :loading="loadingItem || uploading" />
+        <UploadComposer :disabled="uploading" @upload="handleUpload" />
       </section>
 
       <SummaryPanel
@@ -263,7 +263,7 @@ onMounted(async () => {
 
 .main-column {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
   gap: 1rem;
   min-height: 0;
 }

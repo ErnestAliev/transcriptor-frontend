@@ -65,14 +65,6 @@ function handleDrop(event) {
 
 <template>
   <section class="upload-card" :class="{ 'is-dragging': isDragging }">
-    <div class="upload-copy">
-      <p class="eyebrow">Новая запись</p>
-      <h1>Загрузите аудио и получите чистую структуру вместо сырого текста</h1>
-      <p class="upload-note">
-        Поддержка mp3, mp4, m4a, wav, webm, ogg. Максимум 25 MB на файл.
-      </p>
-    </div>
-
     <div
       class="dropzone"
       @dragenter.prevent="isDragging = true"
@@ -118,10 +110,10 @@ function handleDrop(event) {
 .upload-card {
   position: relative;
   display: grid;
-  gap: 1.5rem;
-  padding: 1.75rem;
+  gap: 0.85rem;
+  padding: 1rem;
   border: 1px solid var(--border-strong);
-  border-radius: 28px;
+  border-radius: 24px;
   background:
     radial-gradient(circle at top right, var(--accent-soft), transparent 46%),
     linear-gradient(180deg, var(--panel-strong), var(--panel));
@@ -131,27 +123,6 @@ function handleDrop(event) {
 .upload-card.is-dragging {
   border-color: var(--accent);
   transform: translateY(-2px);
-}
-
-.eyebrow {
-  margin: 0 0 0.4rem;
-  font: 600 0.74rem/1 "IBM Plex Mono", monospace;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.upload-copy h1 {
-  margin: 0;
-  max-width: 16ch;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 0.96;
-}
-
-.upload-note {
-  margin: 0.85rem 0 0;
-  max-width: 56ch;
-  color: var(--text-muted);
 }
 
 .dropzone {
